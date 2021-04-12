@@ -1,4 +1,5 @@
-const testData = require('../support/test_data/test.data')
+import {jsonSchema} from '../support/test_data/get_user_schema'
+import {testData} from '../support/test_data/test.data'
 
 describe('Github API tests', () => {
 
