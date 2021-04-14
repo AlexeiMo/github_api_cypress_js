@@ -1,5 +1,6 @@
-import {jsonSchema} from '../support/test_data/get_user_schema'
-import {testData} from '../support/test_data/test.data'
+import { getUserSchema } from "../support/test_data/get_user_schema"
+import { testData } from '../support/test_data/test.data'
+import { validateSchema } from "../support/helpers/json_schema.validation.helper";
 
 describe('Github API tests', () => {
 
@@ -14,8 +15,11 @@ describe('Github API tests', () => {
             headers: {'Authorization': 'Bearer ' + token}
         }).then(response => {
             expect(response.status).to.equal(200)
+            validateSchema(getUserSchema, response.body)
             expect(response.body.id).to.equal(user_id)
             expect(response.body.node_id).to.equal(node_id)
         })
     })
+
+
 })
