@@ -1,4 +1,4 @@
-module.exports = {
+export const testData = {
     authorization: {
         token: ""
     },
@@ -8,5 +8,4 @@ module.exports = {
         user_id: 1,
         node_id: "MDQ6VXNlcjE="
     }
-
 }
